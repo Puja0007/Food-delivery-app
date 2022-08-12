@@ -3,8 +3,8 @@ import { SearchRounded, ShoppingCartRounded,BarChart } from "@mui/icons-material
 function Header() {
     return (
         <header>
-            <div>
-            <img src="public\logo.png" alt="" className="logo"/>
+               <img src="logo.jpg" alt="" className="logo"/>
+            <div className="inputBox"> 
             <SearchRounded className="searchIcon" />
             <input type="text" className="search" placeholder="Search"/>
             </div>
@@ -17,9 +17,9 @@ function Header() {
             </div>
          <div className="profileContainer">
              <div className="imgBox">
-                 <img src="" alt="" />
+                 <img src="profile.png" alt="" />
              </div>
-             <h2>Puja Das</h2>
+             <h2 className="userName">Puja Das</h2>
          </div>
          <div className="toggleMenu">
              <BarChart className="toggleIcon"/>
