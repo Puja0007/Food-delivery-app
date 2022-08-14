@@ -12,11 +12,10 @@ import ItemCard from "./Components/ItemCard";
 
 
 function App() {
-  const[isMainData, setMainData] = useState(Items.filter(item=> item.itemId = "buger01"));
-  const setData = (itemId)=>{
-    setMainData(Items.filter(item=> item.itemId = itemId));
-  }
+  const[isMainData, setMainData] = useState(Items.filter(item=> item.itemId == "buger01"));
+ 
   useEffect(() => {
+    console.log(isMainData);
     const menuLi = document.querySelectorAll("#menu li");
 
     function setMenuActive() {
@@ -26,18 +25,22 @@ function App() {
 
     menuLi.forEach((n) => n.addEventListener("click", setMenuActive));
 
-    // menu Card active class changer
-    // const menuCard = document
-    //   .querySelector(".rowContainer")
-    //   .querySelectorAll(".rowMenuCard");
+   // menu Card active class changer
+    const menuCard = document
+      .querySelector(".rowContainer")
+      .querySelectorAll(".rowMenuCard");
 
-    // function setMenuCardActive() {
-    //   menuCard.forEach((n) => n.classList.remove("active"));
-    //   this.classList.add("active");
-    // }
+    function setMenuCardActive() {
+      menuCard.forEach((n) => n.classList.remove("active"));
+      this.classList.add("active");
+    }
 
-    // menuCard.forEach((n) => n.addEventListener("click", setMenuCardActive));
-  }, []);
+     menuCard.forEach((n) => n.addEventListener("click", setMenuCardActive));
+  }, [isMainData]);
+
+  const setData = (itemId) => {
+    setMainData(Items.filter((element) => element.itemId == itemId));
+  };
   return (
     <div className="App">
       {/* Header */}
@@ -65,7 +68,7 @@ function App() {
                     <MenuCard
                       imgSrc={data.imgSrc}
                       name={data.name}
-                      isActive={data.id == "1" ? true : false}
+                      isActive={data.id == 1 ? true : false}
                     />
                   </div>
                 ))}

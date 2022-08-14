@@ -2,13 +2,13 @@ import { AddRounded, Favorite, StarRounded } from "@mui/icons-material";
 import React, { useState } from "react";
 // import { actionType } from "./reducer";
 // import { useStateValue } from "./StateProvider";
-// import { Items } from "./Data";
+ import { Items } from "./Data";
 import { useEffect } from "react";
 let cartData = [];
 
 function ItemCard({ itemId, imgSrc, name, price, ratings }) {
-//   const [currentValue, setCurrentValue] = useState(Math.floor(ratings));
-//   const [isFavourite, setFavourite] = useState(false);
+   const [currentValue, setCurrentValue] = useState(Math.floor(ratings));
+   const [isFavourite, setFavourite] = useState(false);
 //   const [{}, dispatch] = useStateValue();
 //   const [isCart, setCart] = useState(null);
 
@@ -22,13 +22,13 @@ function ItemCard({ itemId, imgSrc, name, price, ratings }) {
 //     }
 //   }, [isCart]);
 
-//   const handleClick = (value) => {
-//     setCurrentValue(value);
-//   };
+  const handleClick = (value) => {
+    setCurrentValue(value);
+  };
 
   return (
     <div className="itemCard" id={itemId}>
-      {/* <div
+      <div
         className={`isFavourite ${isFavourite ? "active" : ""}`}
         onClick={() => setFavourite(!isFavourite)}
       >
@@ -57,16 +57,16 @@ function ItemCard({ itemId, imgSrc, name, price, ratings }) {
               {price}
             </h3>
           </div>
-          <i
+          {/* <i
             className="addToCart"
             onClick={() => {
               setCart(Items.find((n) => n.id === itemId));
             }}
-          >
+          > */}
             <AddRounded />
-          </i>
+          {/* </i> */}
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }
