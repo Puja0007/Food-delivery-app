@@ -9,7 +9,7 @@ import SubMenuContainer from './Components/SubMenuContainer';
 import { MenuItems, Items } from "./Components/Data";
 import MenuCard from "./Components/MenuCard";
 import ItemCard from "./Components/ItemCard";
-
+import DebitCard from './Components/DebitCard';
 
 function App() {
   const[isMainData, setMainData] = useState(Items.filter(item=> item.itemId == "buger01"));
@@ -89,7 +89,15 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="rightMenu"></div>
+        <div className="rightMenu">
+          <div className="debitCardContainer">
+            <div className="debitCard">
+              <DebitCard />
+            </div>
+          </div>
+
+          
+        </div>
       </main>
       {/* bottom section */}
 
